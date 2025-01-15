@@ -1,9 +1,53 @@
-try:
-    assert sum(2, 3) == 5, f"Klaida vykdant funkciją 'sum()'. Atsakymas turi būti {5}"
-    assert sub(17, 10) == 7, f"Klaida vykdant funkciją 'sub()'. Atsakymas turi būti {7}"
-    assert mul(5, 5) == 25, f"Klaida vykdant funkciją 'mul()'. Atsakymas turi būti {25}"
-    assert div(81, 9) == 9, f"Klaida vykdant funkciją 'div()'. Atsakymas turi būti {9}"
-    assert pow(12, 2) == 144, f"Klaida vykdant funkciją 'pow()'. Atsakymas turi būti {144}"
-    print(f'Visi testai yra sėkmingi')
-except AssertionError as klaida:
-    print(f"Testas: {klaida}")
+array = input()
+buffer = ""
+num = 0
+numArray = []
+q = []
+
+
+def sum(a, b):
+    return a + b
+
+def sub(a, b):
+    return a - b
+
+def mul(a, b):
+    return a * b
+
+def div(a, b):
+    return a / b
+
+def pow(a, b):
+    return a ** b
+
+
+for c in array:
+    if(c != '+' and c != '-' and c != '*' and c != '/' or c == array[1:]):
+        buffer += c
+        continue
+    numArray.append(float(buffer))
+    buffer = ""
+    q.append(c)
+
+
+for i in range(0,len(q)):
+    a = numArray[i]
+    b = numArray[i+1]
+    c = q[i]
+    if(c == "+"):
+        sum(a,b)
+    if(c == "-"):
+        sub(a,b)
+    if(c == "*"):
+        mul(a,b)
+    if(c == "/"):
+        div(a,b)
+    if(c == "^"):
+        pow(a,b)
+
+    
+
+
+
+
+
