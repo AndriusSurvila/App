@@ -1,5 +1,3 @@
-
-
 array = input()
 buffer = ""
 num = 0
@@ -35,5 +33,17 @@ for i in range(0,len(q)):
 
 
 
+def sum(a, b):
+    return a + b
 
-def sum(a, b0):
+def sub(a, b):
+    return a - b
+
+def mul(a, b):
+    return a * b
+
+def div(a, b):
+    return a / b
+
+def pow(a, b):
+    return a ** b
