@@ -32,20 +32,20 @@ for c in array:
     q.append(c)
 
 
-for i in range(0,len(q)):       #sdelat vyvod normalno
-    a = numArray[i]
+for i in range(0,len(q)):
+    a = a + numArray[i]
     b = numArray[i+1]
     c = q[i]
     if(c == "+"):
-        sum(a,b)
+        a = sum(a,b)
     if(c == "-"):
-        sub(a,b)
+        a = sub(a,b)
     if(c == "*"):
-        mul(a,b)
+        a = mul(a,b)
     if(c == "/"):
-        div(a,b)
+        a = div(a,b)
     if(c == "^"):
-        pow(a,b)
+        a = pow(a,b)
 
     
 
