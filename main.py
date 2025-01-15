@@ -4,6 +4,23 @@ num = 0
 numArray = []
 q = []
 
+
+def sum(a, b):
+    return a + b
+
+def sub(a, b):
+    return a - b
+
+def mul(a, b):
+    return a * b
+
+def div(a, b):
+    return a / b
+
+def pow(a, b):
+    return a ** b
+
+
 for c in array:
     if(c != '+' and c != '-' and c != '*' and c != '/' or c == array[1:]):
         buffer += c
@@ -11,6 +28,7 @@ for c in array:
     numArray.append(float(buffer))
     buffer = ""
     q.append(c)
+
 
 for i in range(0,len(q)):
     a = numArray[i]
@@ -33,17 +51,3 @@ for i in range(0,len(q)):
 
 
 
-def sum(a, b):
-    return a + b
-
-def sub(a, b):
-    return a - b
-
-def mul(a, b):
-    return a * b
-
-def div(a, b):
-    return a / b
-
-def pow(a, b):
-    return a ** b
