@@ -1,55 +1,62 @@
-array = input()
-buffer = ""
-num = 0
-numArray = []
-q = []
+def sum1(first, second):
+    return first + second
 
+def sub(first, second):
+    return first - second
 
-def sum(a, b):
-    return a + b
+def mul(first, second):
+    return first * second
 
-def sub(a, b):
-    return a - b
+def div(first, second):
+    return first / second
 
-def mul(a, b):
-    return a * b
+def pwr(first, second):
+    return first ** second
 
-def div(a, b):
-    return a / b
-
-def pow(a, b):
-    return a ** b
-
-
-for c in array:
-    if(c != '+' and c != '-' and c != '*' and c != '/'):
-        buffer += c
-        if( c == array[-1]):
-            numArray.append(float(buffer))
-        continue
-    numArray.append(float(buffer))
+def parse_array(array):
     buffer = ""
-    q.append(c)
+    num_array = []
+    q = []
+    for char in array:
+        if char != '+' and char != '-' and char != '*' and char != '/' and char != '^':
+            buffer += char
+            if char == array[-1]:
+                num_array.append(float(buffer))
+            continue
+        num_array.append(float(buffer))
+        buffer = ""
+        q.append(char)
+    return num_array, q
 
+def operate(_numbers, _operations, _input_array):
+    a = _numbers[0]
 
-for i in range(0,len(q)):       #sdelat vyvod normalno
-    a = numArray[i]
-    b = numArray[i+1]
-    c = q[i]
-    if(c == "+"):
-        sum(a,b)
-    if(c == "-"):
-        sub(a,b)
-    if(c == "*"):
-        mul(a,b)
-    if(c == "/"):
-        div(a,b)
-    if(c == "^"):
-        pow(a,b)
+    if len(_operations) == len(_numbers) and _operations[0] == _input_array[0] and _operations[0] == "-":
+        a *= -1
+        _operations.pop(0)
 
-    
+    for i in range(0,len(_operations)):
+        b = _numbers[i+1]
+        operation = _operations[i]
+        if operation == "+":
+            a = sum1(a, b)
+            continue
+        if operation == "-":
+            a = sub(a,b)
+            continue
+        if operation == "*":
+            a = mul(a,b)
+            continue
+        if operation == "/":
+            a = div(a,b)
+            continue
+        if operation == "^":
+            a = pwr(a, b)
+            continue
 
+    return a
 
-
-
-
+input_array = input()
+numbers, operations = parse_array(input_array)
+answer = operate(numbers, operations, input_array)
+print(answer)
