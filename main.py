@@ -1,4 +1,4 @@
-def sum1(first, second):
+def add(first, second):
     return first + second
 
 def sub(first, second):
@@ -18,7 +18,7 @@ def parse_array(array):
     num_array = []
     q = []
     for char in array:
-        if char != '+' and char != '-' and char != '*' and char != '/' and char != '^':
+        if char.isdigit():
             buffer += char
             if char == array[-1]:
                 num_array.append(float(buffer))
@@ -39,18 +39,18 @@ def operate(_numbers, _operations, _input_array):
         b = _numbers[i+1]
         operation = _operations[i]
         if operation == "+":
-            a = sum1(a, b)
+            a = add(a, b)
             continue
-        if operation == "-":
+        elif operation == "-":
             a = sub(a,b)
             continue
-        if operation == "*":
+        elif operation == "*":
             a = mul(a,b)
             continue
-        if operation == "/":
+        elif operation == "/":
             a = div(a,b)
             continue
-        if operation == "^":
+        elif operation == "^":
             a = pwr(a, b)
             continue
 
