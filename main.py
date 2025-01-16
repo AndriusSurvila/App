@@ -56,7 +56,9 @@ def operate(_numbers, _operations, _input_array):
 
     return a
 
-input_array = input()
-numbers, operations = parse_array(input_array)
-answer = operate(numbers, operations, input_array)
-print(answer)
+def initiate(input_array): #easier for debugging and checks
+    numbers, operations = parse_array(input_array)
+    answer = operate(numbers, operations, input_array)
+    print(answer)
+
+initiate(input())
