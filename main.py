@@ -13,11 +13,11 @@ def div(first, second):
 def pwr(first, second):
     return first ** second
 try:
-    assert add(2, 3) == 5, f"Klaida vykdant funkciją 'sum()'. Atsakymas turi būti {5}"
-    assert sub(17, 10) == 7, f"Klaida vykdant funkciją 'sub()'. Atsakymas turi būti {7}"
-    assert mul(5, 5) == 25, f"Klaida vykdant funkciją 'mul()'. Atsakymas turi būti {25}"
-    assert div(81, 9) == 9, f"Klaida vykdant funkciją 'div()'. Atsakymas turi būti {9}"
-    assert pwr(12, 2) == 144, f"Klaida vykdant funkciją 'pow()'. Atsakymas turi būti {144}"
+    assert add(2, 3) == 5, f"Klaida vykdant funkciją 'sum()'. {5}"
+    assert sub(17, 10) == 7, f"Klaida vykdant funkciją 'sub()'. {7}"
+    assert mul(5, 5) == 25, f"Klaida vykdant funkciją 'mul()'. {25}"
+    assert div(81, 9) == 9, f"Klaida vykdant funkciją 'div()'. {9}"
+    assert pwr(12, 2) == 144, f"Klaida vykdant funkciją 'pow()'. {144}"
     print(f'Visi testai yra sėkmingi')
 except AssertionError as klaida:
     print(f"Testas: {klaida}")
