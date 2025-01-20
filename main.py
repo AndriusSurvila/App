@@ -52,16 +52,16 @@ def operate(_numbers, _operations, _input_array):
         if operation == "+":
             a = add(a, b)
             continue
-        elif operation == "-":
+        if operation == "-":
             a = sub(a,b)
             continue
-        elif operation == "*":
+        if operation == "*":
             a = mul(a,b)
             continue
-        elif operation == "/":
+        if operation == "/":
             a = div(a,b)
             continue
-        elif operation == "^":
+        if operation == "^":
             a = pwr(a, b)
             continue
 
